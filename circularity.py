@@ -1,8 +1,4 @@
-"""Conditional circularity re-ranking for research evaluation only.
-
-All action taxonomies are provided by the caller. Re-ranking is a score-based
-research policy, NOT proof of technical compatibility or safe substitution.
-"""
+"""Circularity re-ranking"""
 from __future__ import annotations
 
 from collections.abc import Collection, Mapping, Sequence
@@ -17,13 +13,7 @@ def conditional_circularity_rerank(
     delta: float = 0.05,
     pool_size: int = 5,
 ) -> list[str]:
-    """Promote close-scoring preservation actions when rank 1 is replacement.
-
-    Eligible alternatives must fall within the first `pool_size` ranks and
-    have a relative score difference from rank 1 <= `delta`. A zero or
-    negative top score never triggers promotion. The returned order remains a
-    recommendation ordering, not a verified maintenance or procurement action.
-    """
+    """Promote close-scoring preservation actions when rank 1 is replacement."""
     if not 0 <= delta <= 1:
         raise ValueError("delta must be between 0 and 1")
     if pool_size < 2:
