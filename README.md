@@ -23,8 +23,7 @@ whitelists, or inventory records are included.
 - `modules/circularity.py`: Conditional relative-score-gap reranking.
 - `evaluation/cross_validation.py`: Aggregate classification and regression
   cross-validation evaluation.
-- `evaluation/ablation_study.py`: Aggregate out-of-fold component comparisons.
-- `evaluation/metrics.py`: Ranking and aggregation metrics.
+
 
 ## Methodology and limitations
 
@@ -37,8 +36,6 @@ explicitly configured by the researcher, and reports aggregate Top-1,
 HR@k, Precision@k, nDCG@k, MRR and coverage. Numeric outcomes can be assessed
 using MAE, RMSE and R²; classification uses accuracy and F1 scores.
 
-The circularity module requires caller-supplied replacement and preservation
-categories. No confidential original category-to-action mapping is included.
 
 
 ## Requirements and integration
