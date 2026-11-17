@@ -1,8 +1,4 @@
-"""Regression model definitions for numerical maintenance outcomes.
-
-The source notebook evaluated separate outcomes for duration and cost.
-No data, organization-specific features or trained coefficients are bundled.
-"""
+"""Regression model definitions for numerical maintenance outcomes."""
 from __future__ import annotations
 
 import re
@@ -22,10 +18,7 @@ from sklearn.svm import SVR
 
 
 def extract_numeric_value(value: object) -> float:
-    """Extract the first number from a non-standard numerical field.
-
-    Ambiguous locale-specific number formats should be preprocessed by the caller.
-    """
+    
     if pd.isna(value):
         return float("nan")
     cleaned = str(value).strip().replace(" ", "")
