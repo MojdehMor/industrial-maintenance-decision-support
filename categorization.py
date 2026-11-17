@@ -1,7 +1,4 @@
 """Intervention categorization and classification model definitions.
-
-Industry-specific mapping dictionaries and labels are intentionally NOT bundled.
-Callers must supply approved keyword rules and their own tabular features.
 """
 from __future__ import annotations
 
@@ -32,11 +29,7 @@ def normalize_text(value: object) -> str:
 def ordered_keyword_map(value: object,
                         rules: Sequence[tuple[str, str]],
                         default: str) -> str:
-    """Assign first matching class in a caller-approved ordered rule list.
-
-    Rule order is significant, matching the rule-based workflow of the source
-    research. No project-specific labels or keywords are embedded here.
-    """
+    
     text = normalize_text(value)
     if not text:
         return default
@@ -58,9 +51,6 @@ def categorize_interventions(
     secondary_default: str = "no secondary intervention specified",
 ) -> pd.DataFrame:
     """Return a copy with primary, secondary and secondary-required labels.
-
-    The caller is responsible for ensuring that the rule taxonomy is approved
-    for public use. No examples or source records are stored by the module.
     """
     missing = {action_column, details_column} - set(frame.columns)
     if missing:
