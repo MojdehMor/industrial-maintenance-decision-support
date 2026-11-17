@@ -1,6 +1,5 @@
 """Content-based, case-based and hybrid maintenance-action recommendation.
-
-Pure algorithmic components: nothing is loaded from disk or uploaded at import.
+Pure algorithmic components.
 No private action labels, industrial cases, model weights or part IDs are stored.
 """
 from __future__ import annotations
@@ -19,7 +18,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-DEFAULT_WEIGHTS = {"ML": 0.80, "CBR": 0.15, "Content": 0.05}
 KNOWN_CONTENT_FEATURES = frozenset({"age", "business", "affected_component"})
 MISSING_LABELS = frozenset({"", "none", "unknown", "nan", "n/a", "na",
                             "not provided", "unspecified", "missing", "null"})
