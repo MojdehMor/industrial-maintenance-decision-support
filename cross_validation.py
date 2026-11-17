@@ -1,6 +1,4 @@
-"""Reusable cross-validation protocols for categorization and regression.
-
-Inputs are provided in memory. Outputs are aggregate scores only.
+"""cross-validation protocols for categorization and regression.
 """
 from __future__ import annotations
 
