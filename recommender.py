@@ -70,10 +70,6 @@ def content_scores(
     neighbors: int = 15,
 ) -> np.ndarray:
     """Top-neighbor content voting with equal weights among observed features.
-
-    Numeric age uses inverse absolute distance; categorical attributes use exact
-    match. Missing query features are skipped. If no selected signal is observed,
-    content abstains with an all-zero vector; no popularity fallback is applied.
     """
     feature_set = tuple(enabled_features)
     if not feature_set or len(feature_set) != len(set(feature_set)) or not set(feature_set) <= KNOWN_CONTENT_FEATURES:
