@@ -1,12 +1,12 @@
 # Industrial maintenance decision-support framework
 
-This repository contains publicly shareable, modular **research code** for an
-industrial maintenance decision-support study. It includes algorithmic
+This repository contains publicly shareable, modular research code for an
+industrial maintenance decision support study. It includes algorithmic
 implementations for intervention categorization, prediction of numerical
 maintenance outcomes, maintenance-action recommendation, conditional
 circularity re-ranking, and aggregate evaluation.
 
-**No original industrial data, synthetic datasets, runnable examples,
+No original industrial data, synthetic datasets, runnable examples,
 notebooks, case-level predictions, trained models, annotation workbooks,
 whitelists, or inventory records are included.
 
